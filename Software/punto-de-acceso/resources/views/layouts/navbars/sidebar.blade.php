@@ -24,7 +24,7 @@
                     </div>
                     <a href="{{ route('profile.edit') }}" class="dropdown-item">
                         <i class="ni ni-single-02"></i>
-                        <span>{{ __('My profile') }}</span>
+                        <span>{{ __('Perfil') }}</span>
                     </a>
                     <a href="#" class="dropdown-item">
                         <i class="ni ni-settings-gear-65"></i>
@@ -84,12 +84,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('profile.edit') }}">
+                    <a class="nav-link" href="/usuarios">
                         <i class="ni ni-single-02 text-yellow"></i> {{ __('Usuarios') }}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('user.index') }}">
+                    <a class="nav-link" href="/registros">
                         <i class="ni ni-bullet-list-67 text-red"></i> {{ __('Registos') }}
                     </a>
                 </li>
