@@ -26,18 +26,6 @@
                         <i class="ni ni-single-02"></i>
                         <span>{{ __('Perfil') }}</span>
                     </a>
-                    <a href="#" class="dropdown-item">
-                        <i class="ni ni-settings-gear-65"></i>
-                        <span>{{ __('Settings') }}</span>
-                    </a>
-                    <a href="#" class="dropdown-item">
-                        <i class="ni ni-calendar-grid-58"></i>
-                        <span>{{ __('Activity') }}</span>
-                    </a>
-                    <a href="#" class="dropdown-item">
-                        <i class="ni ni-support-16"></i>
-                        <span>{{ __('Support') }}</span>
-                    </a>
                     <div class="dropdown-divider"></div>
                     <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
@@ -80,17 +68,17 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
-                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Inicio') }}
+                        <i style="font-size:24px;" class="ni ni-tv-2 text-primary"></i> <h3>{{ __('Inicio') }}</h3>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/usuarios">
-                        <i class="ni ni-single-02 text-yellow"></i> {{ __('Usuarios') }}
+                        <i style="font-size:24px;" class="ni ni-single-02 text-yellow"></i> <h3>{{ __('Usuarios') }}</h3>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/registros">
-                        <i class="ni ni-bullet-list-67 text-red"></i> {{ __('Registos') }}
+                        <i style="font-size:24px;" class="ni ni-bullet-list-67 text-red"></i> <h3>{{ __('Registros') }}</h3>
                     </a>
                 </li>
             </ul>

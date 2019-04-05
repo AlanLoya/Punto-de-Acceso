@@ -13,6 +13,8 @@
     </div>
   </div>
 </div>
+<br>
+<center>{{ $usuario->links() }}</center>
   <table id="customers">
     <tr>
       <th><strong>RFID</strong></th>

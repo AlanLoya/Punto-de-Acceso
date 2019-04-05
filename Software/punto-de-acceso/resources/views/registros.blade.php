@@ -13,6 +13,8 @@
     </div>
   </div>
 </div>
+<br>
+<center>{{ $registro->links() }}</center>
   <table id="customers">
     <tr>
       <th><strong>RFID</strong></th>
@@ -26,36 +28,22 @@
       <th><strong>Salida</strong></th>
       <th><strong>Tiempo Uso</strong></th>
     </tr>
-
+@foreach ($registro as $reg)
     <tr>
-      <td>321321</td>
-      <td>15040110</td>
-      <td>Alan</td>
-      <td>Loya</td>
-      <td>Alumno</td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td> </td>
-      <td><a href="libros/0/edit" style="font-size:24px;color:#495057" class="fas fa-pencil-alt"></a></td>
-      <td><a style="font-size:24px;color: #de0000 " type="reset" class="fas fa-trash-alt" OnClick="if ( confirm('Esta Seguro que Desea Borrar ? 0: ')) return location.href='libros/delete/0'"></a></td>
-     </tr>
-     <tr>
-       <td>321321</td>
-       <td>15040110</td>
-       <td>Alan</td>
-       <td>Loya</td>
-       <td>Alumno</td>
-       <td> </td>
-       <td> </td>
-       <td> </td>
-       <td> </td>
-       <td> </td>
+      <td>{{$reg->rfid}}</td>
+      <td>{{$reg->no_control}}</td>
+      <td>{{$reg->nombre}}</td>
+      <td>{{$reg->apellido}}</td>
+      <td>{{$reg->tipo}}</td>
+      <td>{{$reg->materia}}</td>
+      <td>{{$reg->actividad}}</td>
+      <td>{{$reg->entrada}}</td>
+      <td>{{$reg->salida}}</td>
+      <td>{{$reg->uso}}</td>
        <td><a href="libros/0/edit" style="font-size:24px;color:#495057" class="fas fa-pencil-alt"></a></td>
        <td><a style="font-size:24px;color: #de0000 " type="reset" class="fas fa-trash-alt" OnClick="if ( confirm('Esta Seguro que Desea Borrar ? 0: ')) return location.href='libros/delete/0'"></a></td>
       </tr>
-
+      @endforeach
   </table>
         @include('layouts.footers.auth')
     </div>

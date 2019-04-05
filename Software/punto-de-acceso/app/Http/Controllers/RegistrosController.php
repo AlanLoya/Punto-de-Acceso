@@ -1,8 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Acceso;
 
 class RegistrosController extends Controller
 {
@@ -11,9 +11,14 @@ class RegistrosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+     public function scopeDone($query) {
+      return $query->where('done', false);
+     }
+
+    public function index(Request $request)
     {
-        //
+      $registro=Acceso::nombre($request->get('nombre'))->paginate(20);
+        return view('registros', compact('registro'));
     }
 
     /**
