@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-04-2019 a las 02:36:49
+-- Tiempo de generación: 16-04-2019 a las 02:49:37
 -- Versión del servidor: 10.1.35-MariaDB
 -- Versión de PHP: 7.2.9
 
@@ -47,7 +47,8 @@ CREATE TABLE `accesos` (
 --
 
 INSERT INTO `accesos` (`id`, `rfid`, `no_control`, `nombre`, `apellido`, `tipo`, `materia`, `actividad`, `entrada`, `salida`, `uso`) VALUES
-(1, 1, 15040110, 'Alan Arturo', 'Loya Favela', 'Alumno', '1231-Investigacion', 'Clases', '2019-04-16 00:18:42', '2019-04-15 13:00:00', '01:00:00');
+(1, 1, 15040110, 'Alan Arturo', 'Loya Favela', 'Alumno', '1231-Investigacion', 'Clases', '2019-04-16 00:18:42', '2019-04-15 13:00:00', '01:00:00'),
+(2, 2, 15040112, 'Beatriz', 'Miranda', 'Alumno', '212-Sistemas Embebidos', 'Clases', '2019-04-16 00:39:50', '2019-04-15 13:00:00', '00:19:00');
 
 -- --------------------------------------------------------
 
@@ -138,9 +139,7 @@ INSERT INTO `user_i_t_s_z_o_s` (`rfid`, `no_control`, `nombre`, `apellido`, `tip
 --
 ALTER TABLE `accesos`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`),
-  ADD UNIQUE KEY `rfid` (`rfid`),
-  ADD UNIQUE KEY `no_control` (`no_control`);
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Indices de la tabla `migrations`
@@ -170,7 +169,7 @@ ALTER TABLE `user_i_t_s_z_o_s`
 -- AUTO_INCREMENT de la tabla `accesos`
 --
 ALTER TABLE `accesos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `migrations`
