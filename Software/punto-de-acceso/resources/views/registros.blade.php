@@ -14,9 +14,11 @@
   </div>
 </div>
 <br>
-<center>{{ $registro->links() }}</center>
-  <table id="customers">
-    <tr>
+<div align="center">{{ $registro->links() }}</div>
+<div class="table-responsive">
+  <table class="table align-items-center table-dark">
+  <thead class="thead-dark">
+    <tr align="center">
       <th><strong>RFID</strong></th>
       <th><strong>No. Control</strong></th>
       <th><strong>Nombre(s)</strong></th>
@@ -28,8 +30,10 @@
       <th><strong>Salida</strong></th>
       <th><strong>Tiempo Uso</strong></th>
     </tr>
+  </thead>
+  <tbody>
 @foreach ($registro as $reg)
-    <tr>
+    <tr align="center">
       <td>{{$reg->rfid}}</td>
       <td>{{$reg->no_control}}</td>
       <td>{{$reg->nombre}}</td>
@@ -40,11 +44,13 @@
       <td>{{$reg->entrada}}</td>
       <td>{{$reg->salida}}</td>
       <td>{{$reg->uso}}</td>
-       <td><a href="libros/0/edit" style="font-size:24px;color:#495057" class="fas fa-pencil-alt"></a></td>
-       <td><a style="font-size:24px;color: #de0000 " type="reset" class="fas fa-trash-alt" OnClick="if ( confirm('Esta Seguro que Desea Borrar ? 0: ')) return location.href='libros/delete/0'"></a></td>
+       <td><a href="registros/{{$reg->id}}/edit" style="font-size:24px;color:white" class="fas fa-pencil-alt"></a></td>
+       <td><a style="font-size:24px;color: white " type="reset" class="fas fa-trash-alt" OnClick="if ( confirm('Esta Seguro que Desea Borrar ? {{$reg->rfid}}:{{$reg->nombre}} {{$reg->actividad}} {{$reg->entrada}} ')) return location.href='registros/delete/{{$reg->id}}'"></a></td>
       </tr>
       @endforeach
+    </tbody>
   </table>
+</div>
         @include('layouts.footers.auth')
     </div>
 @endsection

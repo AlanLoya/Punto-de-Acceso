@@ -82,8 +82,12 @@ class RegistrosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+     public function destroy($id)
+     {
+       $registro=Acceso::find($id);
+       if ($registro->delete($id)){
+         return redirect("registros/");
+       }
+       else return "El ".$id."No se pudo borrar";
+     }
 }

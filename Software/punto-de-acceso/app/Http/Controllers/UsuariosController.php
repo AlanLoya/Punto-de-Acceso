@@ -6,11 +6,6 @@ use App\UserITSZO;
 
 class UsuariosController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
      public function scopeDone($query) {
       return $query->where('done', false);
@@ -18,73 +13,51 @@ class UsuariosController extends Controller
 
     public function index(Request $request)
     {
-      $usuario=UserITSZO::nombre($request->get('nombre'))->paginate(20);
+      $usuario=UserITSZO::nombre($request->get('nombre'))->paginate(2);
         return view('usuarios', compact('usuario'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function show()
     {
-        //
+      //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
+      {
+        $registro=new UserITSZO();
+          $registro->rfid = $request->input('rfid');
+          $registro->no_control = $request->input('no_control');
+          $registro->nombre = $request->input('nombre');
+          $registro->apellido = $request->input('apellido');
+          $registro->tipo = $request->input('tipo');
+        $registro->save();
+        return redirect()->action('UsuariosController@index');
+      }
+
+    public function edit($rfid)
     {
-        //
+      $usuario = UserITSZO::find($rfid);
+      return view('usuarios.edit', compact('usuario'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function update(Request $request, $rfid)
     {
-        //
+      $usuario= UserITSZO::find($rfid);
+      $usuario->rfid = $request->input('rfid');
+      $usuario->no_control = $request->input('no_control');
+      $usuario->nombre = $request->input('nombre');
+      $usuario->apellido = $request->input('apellido');
+      $usuario->tipo = $request->input('tipo');
+      $usuario->save();
+      return redirect()->action('UsuariosController@index');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+     public function destroy($rfid)
+     {
+       $usuarios=UserITSZO::find($rfid);
+       if ($usuarios->delete($rfid)){
+         return redirect("usuarios/");
+       }
+       else return "El ".$rfid."No se pudo borrar";
+     }
 }

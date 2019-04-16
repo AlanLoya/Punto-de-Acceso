@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Acceso extends Model
 {
-  protected $primaryKey = 'rfid';
+  protected $primaryKey = 'id';
+  public $timestamps = false;
 
 public function scopeNombre($query, $nombre){
   if(trim($nombre) != ""){

@@ -47,8 +47,8 @@
                             <div class="row">
                                 <div class="col">
                                     <span class="h2 font-weight-bold mb-0">Excel</span><br>
-                                    <button type="submit"  name="" class="btn btn-outline-success" onclick="location.href='/export-libros'">
-						                           <i class="ni ni-book-bookmark">Generar</i></button>
+                                    <button type="submit"  name="" class="btn btn-outline-success" onclick="location.href='/export-registros'">
+						                           Generar<br><i class="ni ni-book-bookmark"></i></button>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
