@@ -13,7 +13,7 @@ class UsuariosController extends Controller
 
     public function index(Request $request)
     {
-      $usuario=UserITSZO::nombre($request->get('nombre'))->paginate(2);
+      $usuario=UserITSZO::nombre($request->get('nombre'))->paginate(20);
         return view('usuarios', compact('usuario'));
     }
 

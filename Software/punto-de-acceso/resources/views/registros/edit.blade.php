@@ -8,7 +8,7 @@
   <div class="container-fluid d-flex align-items-center">
       <div class="row">
           <div class="col-md-12 col-lg-7">
-              <h1 class="display-2 text-white">Editar Usuarios</h1>
+              <h1 class="display-2 text-white">Editar Registro</h1>
         </div>
     </div>
   </div>
@@ -20,23 +20,23 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <input type="text" name="rfid" placeholder="RFID" value="{{$registro->rfid}}" class="form-control form-control-alternative" required/>      </div>
+        <input type="text" name="rfid" placeholder="RFID" value="{{$registro->rfid}}" class="form-control form-control-alternative"readonly required/>      </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <input type="number" name="no_control" placeholder="No. Control" value="{{$registro->no_control}}" class="form-control form-control-alternative" required/>
+        <input type="number" name="no_control" placeholder="No. Control" value="{{$registro->no_control}}" class="form-control form-control-alternative"readonly required/>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-          <input type="text" name="nombre" placeholder="Nombre(s)" value="{{$registro->nombre}}" class="form-control form-control-alternative" required/>
+          <input type="text" name="nombre" placeholder="Nombre(s)" value="{{$registro->nombre}}" class="form-control form-control-alternative"readonly required/>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-          <input type="text" name="apellido" placeholder="Apellido(s)" value="{{$registro->apellido}}" class="form-control form-control-alternative" required/>
+          <input type="text" name="apellido" placeholder="Apellido(s)" value="{{$registro->apellido}}" class="form-control form-control-alternative"readonly required/>
       </div>
     </div>
   </div>
@@ -49,6 +49,44 @@
           						<option value="Alumno">Alumno</option>
 
 									</select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <select class="custom-select" name="tipo" value="{{$registro->materia}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
+                      <li>Primero</li>
+                        <option value="Calculo">Calculo</option>
+                        <option value="Programaci'on">Programaci'on</option>
+                        <option value="Base de Datos">Base de Datos</option>
+                      <li>Segundo</li>
+                        <option value="Calculo">Calculo</option>
+                        <option value="Programaci'on">Programaci'on</option>
+                        <option value="Base de Datos">Base de Datos</option>
+                  </select>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <select class="custom-select" name="tipo" value="{{$registro->actividad}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
+                      <option selected value="">Actividad:</option>
+                      <option value="Clase">Clase</option>
+                      <option value="Consulta">Consulta</option>
+                      <option value="Practica">Practica</option>
+                  </select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+          <input type="datetime" name="entrada" placeholder="Entrada" value="{{$registro->entrada}}" class="form-control form-control-alternative" required/>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+          <input type="datetime-local" name="salida" placeholder="Salida" value="{{$registro->salida}}" class="form-control form-control-alternative" required/>
       </div>
     </div>
     <div class="col-md-6">

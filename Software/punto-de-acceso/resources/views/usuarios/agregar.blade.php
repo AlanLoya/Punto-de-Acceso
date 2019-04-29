@@ -19,7 +19,11 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <input type="number" name="rfid" placeholder="RFID" class="form-control form-control-alternative" required/>      </div>
+        <input type="number" value="" name="rfid" placeholder="RFID" class="form-control form-control-alternative" required/>
+        <button type="submit" onclick="#" class="btn btn-icon btn-3 btn-primary">
+        <span class="btn-inner--icon"><i class="icon fa fa-credit-card"></i></span>
+        <span class="btn-inner--text">Escanear</span></button>
+      </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">

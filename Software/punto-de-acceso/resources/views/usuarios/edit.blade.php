@@ -20,7 +20,7 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <input type="text" name="rfid" placeholder="RFID" value="{{$usuario->rfid}}" class="form-control form-control-alternative" required/>      </div>
+        <input type="text" name="rfid" placeholder="RFID" value="{{$usuario->rfid}}" class="form-control form-control-alternative"readonly required/>      </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">

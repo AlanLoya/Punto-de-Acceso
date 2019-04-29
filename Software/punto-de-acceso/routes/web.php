@@ -1,5 +1,6 @@
 <?php
 use App\UserITSZO;
+use App\Acceso;
 use Illuminate\Support\Facades\Input;
 
 Route::get('/', function () {
@@ -7,6 +8,7 @@ Route::get('/', function () {
 });
 
 Route::resource("usuarios","UsuariosController");
+Route::resource("registros","RegistrosController");
 
 Auth::routes();
 
@@ -24,8 +26,12 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('/agregar-usuario', function () {
     return view('usuarios.agregar');
 });
+Route::get('/agregar-registro', function () {
+    return view('registros.agregar');
+});
 /////////////////////////////////////////////////////////////////////////////////////////////////
 Route::get("usuarios/delete/{rfid}","UsuariosController@destroy");
 Route::get("registros/delete/{id}","RegistrosController@destroy");
 ////////////////////////////////////////////////////////////////////////////////////////////////
 route::get('usuarios/{rfid}/edit', 'UsuariosController@edit');
+route::get('registros/{id}/edit', 'RegistrosController@edit');
