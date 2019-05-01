@@ -4,7 +4,7 @@ use App\Acceso;
 use Illuminate\Support\Facades\Input;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::resource("usuarios","UsuariosController");
@@ -35,3 +35,5 @@ Route::get("registros/delete/{id}","RegistrosController@destroy");
 ////////////////////////////////////////////////////////////////////////////////////////////////
 route::get('usuarios/{rfid}/edit', 'UsuariosController@edit');
 route::get('registros/{id}/edit', 'RegistrosController@edit');
+////////////////////////////////////////////////////////////////////////////////////////////////
+Route::get('/export-registros', 'ExcelController@export');

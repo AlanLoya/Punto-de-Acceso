@@ -9,6 +9,8 @@
       <div class="row">
           <div class="col-md-12 col-lg-7">
               <h1 class="display-2 text-white">Registros</h1>
+              <button type="submit" onclick="location.href='/agregar-registro'" class="btn btn-outline-secondary"><i style="font-size:26px;color:#1965be;vertical-align: middle;" class="ni ni-fat-add">
+              </i>Agregar</button>
         </div>
     </div>
   </div>
@@ -24,6 +26,7 @@
       <th><strong>Nombre(s)</strong></th>
       <th><strong>Apellido(s)</strong></th>
       <th><strong>Tipo de Usuario</strong></th>
+      <th><strong>Carrera</strong></th>
       <th><strong>Materia</strong></th>
       <th><strong>Actividad</strong></th>
       <th><strong>Entrada</strong></th>
@@ -39,6 +42,7 @@
       <td>{{$reg->nombre}}</td>
       <td>{{$reg->apellido}}</td>
       <td>{{$reg->tipo}}</td>
+      <td>{{$reg->carrera}}</td>
       <td>{{$reg->materia}}</td>
       <td>{{$reg->actividad}}</td>
       <td>{{$reg->entrada}}</td>

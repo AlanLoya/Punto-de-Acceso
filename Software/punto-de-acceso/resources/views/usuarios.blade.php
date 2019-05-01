@@ -26,6 +26,7 @@
       <th scope="col">Nombre(s)</th>
       <th scope="col">Apellido(s)</th>
       <th scope="col">Tipo de Usuario</th>
+      <th scope="col">Carrera</th>
       <th></th>
       <th></th>
     </tr>
@@ -38,6 +39,7 @@
         <td>{{$usr->nombre}}</td>
         <td>{{$usr->apellido}}</td>
         <td>{{$usr->tipo}}</td>
+        <td>{{$usr->carrera}}</td>
         <td><a href="usuarios/{{$usr->rfid}}/edit" style="font-size:24px;color:white" class="fas fa-pencil-alt"></a></td>
         <td><a style="font-size:24px;color: white " type="reset" class="fas fa-trash-alt" OnClick="if ( confirm('Esta Seguro que Desea Borrar ? {{$usr->no_control}} : {{$usr->nombre}}')) return location.href='usuarios/delete/{{$usr->rfid}}'"></a></td>
       </tr>

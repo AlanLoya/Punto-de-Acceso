@@ -43,8 +43,7 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <select class="custom-select" name="tipo" value="{{$registro->tipo}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
-          						<option selected value="">Tipo de Usuario:</option>
+        <select class="custom-select" name="tipo" value="{{$registro->tipo}}" style="color: black; width:200px;" class="form-control form-control-alternative" readonly required>
           						<option value="Docente">Docente</option>
           						<option value="Alumno">Alumno</option>
 
@@ -53,7 +52,17 @@
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <select class="custom-select" name="tipo" value="{{$registro->materia}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
+        <select class="custom-select" name="carrera" value="{{$registro->carrera}}" style="color: black; width:200px;" class="form-control form-control-alternative"readonly required>
+          						<option value="Sistemas">Sistemas</option>
+          						<option value="Informatica">Informatica</option>
+									</select>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <select class="custom-select" name="materia" value="{{$registro->materia}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
                       <li>Primero</li>
                         <option value="Calculo">Calculo</option>
                         <option value="Programaci'on">Programaci'on</option>
@@ -65,11 +74,9 @@
                   </select>
       </div>
     </div>
-  </div>
-  <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <select class="custom-select" name="tipo" value="{{$registro->actividad}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
+        <select class="custom-select" name="actividad" value="{{$registro->actividad}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
                       <option selected value="">Actividad:</option>
                       <option value="Clase">Clase</option>
                       <option value="Consulta">Consulta</option>
@@ -77,18 +84,20 @@
                   </select>
       </div>
     </div>
+  </div>
+  <div class="row">
     <div class="col-md-6">
       <div class="form-group">
           <input type="datetime" name="entrada" placeholder="Entrada" value="{{$registro->entrada}}" class="form-control form-control-alternative" required/>
       </div>
     </div>
-  </div>
-  <div class="row">
     <div class="col-md-6">
       <div class="form-group">
           <input type="datetime-local" name="salida" placeholder="Salida" value="{{$registro->salida}}" class="form-control form-control-alternative" required/>
       </div>
     </div>
+  </div>
+  <div class="row">
     <div class="col-md-6">
       <div class="form-group">
         <button type="submit" class="btn btn-icon btn-3 btn-primary">

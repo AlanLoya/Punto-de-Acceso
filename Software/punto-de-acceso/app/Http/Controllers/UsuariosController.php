@@ -30,6 +30,7 @@ class UsuariosController extends Controller
           $registro->nombre = $request->input('nombre');
           $registro->apellido = $request->input('apellido');
           $registro->tipo = $request->input('tipo');
+          $registro->carrera = $request->input('carrera');
         $registro->save();
         return redirect()->action('UsuariosController@index');
       }
@@ -48,6 +49,7 @@ class UsuariosController extends Controller
       $usuario->nombre = $request->input('nombre');
       $usuario->apellido = $request->input('apellido');
       $usuario->tipo = $request->input('tipo');
+      $usuario->carrera = $request->input('carrera');
       $usuario->save();
       return redirect()->action('UsuariosController@index');
     }

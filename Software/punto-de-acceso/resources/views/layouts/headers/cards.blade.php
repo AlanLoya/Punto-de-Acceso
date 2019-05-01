@@ -9,9 +9,11 @@
                             <div class="row">
                                 <div class="col">
                                     <span class="h2 font-weight-bold mb-0">Registros</span>
-                                    <br>
-                                    <h5 class="card-title text-uppercase text-muted mb-0">Total:</h5>
-                                    <h5 class="card-title text-uppercase text-muted mb-0">350,897</h5>
+                                    <br><br>
+                                    <h5 class="card-title text-uppercase text-muted mb-0">Total: {{$count}}</h5>
+                                    <h5 class="card-title text-uppercase text-muted mb-0">Clases: {{$countCla}}</h5>
+                                    <h5 class="card-title text-uppercase text-muted mb-0">Consulta: {{$countCon}}</h5>
+                                    <h5 class="card-title text-uppercase text-muted mb-0">Practica: {{$countPra}}</h5>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
@@ -28,9 +30,10 @@
                             <div class="row">
                                 <div class="col">
                                     <span class="h2 font-weight-bold mb-0">Usuarios</span>
-                                    <h5 class="card-title text-uppercase text-muted mb-0">Total: 72</h5>
-                                    <h5 class="card-title text-uppercase text-muted mb-0">Docentes: 12</h5>
-                                    <h5 class="card-title text-uppercase text-muted mb-0">Alumnos:  60</h5>
+                                    <br><br>
+                                    <h5 class="card-title text-uppercase text-muted mb-0">Total: {{$count1}}</h5>
+                                    <h5 class="card-title text-uppercase text-muted mb-0">Docentes: {{$count2}}</h5>
+                                    <h5 class="card-title text-uppercase text-muted mb-0">Alumnos:  {{$count3}}</h5>
                                 </div>
                                 <div class="col-auto">
                                     <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
@@ -46,7 +49,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <span class="h2 font-weight-bold mb-0">Excel</span><br>
+                                    <span class="h2 font-weight-bold mb-0">Excel</span><br><br>
                                     <button type="submit"  name="" class="btn btn-outline-success" onclick="location.href='/export-registros'">
 						                           Generar<br><i class="ni ni-book-bookmark"></i></button>
                                 </div>

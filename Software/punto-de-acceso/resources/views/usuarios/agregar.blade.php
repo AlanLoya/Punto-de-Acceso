@@ -46,14 +46,24 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <select class="custom-select" name="tipo" style="color: black; width:200px;" class="form-control form-control-alternative" required>
+        <select class="custom-select" name="tipo" style="color: black; width:300px;" class="form-control form-control-alternative" required>
           						<option selected value="">Tipo de Usuario:</option>
           						<option value="Docente">Docente</option>
           						<option value="Alumno">Alumno</option>
-
-									</select>
+				</select>
       </div>
     </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <select class="custom-select" name="carrera" style="color: black; width:300px;" class="form-control form-control-alternative" required>
+                      <option selected value="">Carrera:</option>
+                      <option value="Sistemas">Sistemas</option>
+                      <option value="Informatica">Informatica</option>
+        </select>
+      </div>
+    </div>
+  </div>
+    <div class="row">
     <div class="col-md-6">
       <div class="form-group">
         <button type="submit" class="btn btn-icon btn-3 btn-primary">
