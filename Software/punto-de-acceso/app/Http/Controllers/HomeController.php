@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\UserITSZO;
+use App\Acceso;
 
 class HomeController extends Controller
 {
@@ -21,6 +23,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+      $count=Acceso::count();
+      $countCon = Acceso::where('actividad','like', '%Consulta%')->count();
+      $countCla = Acceso::where('actividad','like', '%Clase%')->count();
+      $countPra = Acceso::where('actividad','like', '%Practica%')->count();
+      $count1=UserITSZO::count();
+      $count2 = UserITSZO::where('tipo','like', '%Docente%')->count();
+      $count3 = UserITSZO::where('tipo','like', '%Alumno%')->count();
+        return view('dashboard',compact('count','count1','count2','count3','countCon','countCla','countPra'));
     }
 }

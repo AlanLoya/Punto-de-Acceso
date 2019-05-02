@@ -8,7 +8,7 @@
                     <div class="col-lg-5 col-md-6">
                         <h1 class="text-white">{{ __('Bienvenido!') }}</h1>
                         <p class="text-lead text-light">
-                            {{ __('Use Argon theme to create a great project.') }}
+                            {{ __('Punto de Acceso a MicroControladores') }}
                         </p>
                     </div>
                 </div>
