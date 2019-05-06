@@ -20,7 +20,7 @@
     <div class="col-md-6">
       <div class="form-group">
       <input type="text" name="rfid" placeholder="RFID" class="form-control form-control-alternative" required/>
-        <button type="submit" onclick="registros/{{$reg->rfid}}}" class="btn btn-icon btn-3 btn-primary">
+        <button type="submit" onclick="#" class="btn btn-icon btn-3 btn-primary">
         <span class="btn-inner--icon"><i class="icon fa fa-credit-card"></i></span>
         <span class="btn-inner--text">Escanear</span></button>
       </div>
@@ -110,4 +110,7 @@
 @push('js')
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>
+<!--  <script src="{{ asset('bower_components/riot/riot.min.js')}}"></script>
+    <script src="{{ asset('bower_components/riot/riot+compiler.min.js')}}"></script>
+    <script src="{{ asset('bower_components/EasyComplete//dist/jquery.easy-autocomplete.min.js')}}"></script> -->
 @endpush
