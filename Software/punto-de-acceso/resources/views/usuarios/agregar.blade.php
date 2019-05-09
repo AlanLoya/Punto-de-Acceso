@@ -39,7 +39,12 @@
     </div>
     <div class="col-md-6">
       <div class="form-group">
-          <input type="text" name="apellido" placeholder="Apellido(s)" class="form-control form-control-alternative" required/>
+          <input type="text" name="apellido" placeholder="Apellido Paterno" class="form-control form-control-alternative" required/>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+          <input type="text" name="apellido1" placeholder="Apellido Materno" class="form-control form-control-alternative" required/>
       </div>
     </div>
   </div>

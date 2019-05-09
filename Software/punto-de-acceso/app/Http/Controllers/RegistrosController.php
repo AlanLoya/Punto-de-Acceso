@@ -53,6 +53,7 @@ class RegistrosController extends Controller{
       $registro->actividad = $request->input('actividad');
       $registro->entrada = $request->input('entrada');
       $registro->salida = $request->input('salida');
+      $registro->ubicacion = $request->input('ubicacion');
       $registro->save();
       return redirect()->action('RegistrosController@index');
     }

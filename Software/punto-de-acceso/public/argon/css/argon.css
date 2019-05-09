@@ -1452,7 +1452,7 @@ pre code
     }
     .col-md-6
     {
-        max-width: 50%;
+        max-width: 33%;
 
         flex: 0 0 50%;
     }

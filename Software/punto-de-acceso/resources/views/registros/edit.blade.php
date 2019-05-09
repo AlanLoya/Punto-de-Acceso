@@ -77,7 +77,6 @@
     <div class="col-md-6">
       <div class="form-group">
         <select class="custom-select" name="actividad" value="{{$registro->actividad}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
-                      <option selected value="">Actividad:</option>
                       <option value="Clase">Clase</option>
                       <option value="Consulta">Consulta</option>
                       <option value="Practica">Practica</option>
@@ -86,6 +85,14 @@
     </div>
   </div>
   <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <select class="custom-select" name="ubicacion" value="{{$registro->ubicacion}}" style="color: black; width:200px;" class="form-control form-control-alternative"readonly required>
+                      <option value="Microcontroladores">Microcontroladores</option>
+                      <option value="....">....</option>
+                  </select>
+      </div>
+    </div>
     <div class="col-md-6">
       <div class="form-group">
           <input type="datetime" name="entrada" placeholder="Entrada" value="{{$registro->entrada}}" class="form-control form-control-alternative" required/>
@@ -107,10 +114,9 @@
   </div>
 </div>
 </form>
-        @include('layouts.footers.auth')
+
     </div>
 @endsection
-
 @push('js')
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>

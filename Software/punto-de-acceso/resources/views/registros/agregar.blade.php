@@ -88,11 +88,11 @@
 <div class="row">
   <div class="col-md-6">
     <div class="form-group">
-    <label class="switch">
-      <input type="checkbox" id="togBtn"><div class="slider round">
-        <span class="on">Entrada</span><span class="off">Salida</span>
-      </div>
-    </label>
+      <select class="custom-select" name="ubicacion" style="color: black; width:300px;" class="form-control form-control-alternative"readonly required>
+                    <option selected value="">Ubicacion:</option>
+                    <option value="Microcontroladores">Microcontroladores</option>
+                    <option value="...">...</option>
+      </select>
     </div>
   </div>
   <div class="col-md-6">
@@ -103,7 +103,6 @@
   </div>
 </div>
 </form>
-        @include('layouts.footers.auth')
     </div>
 @endsection
 

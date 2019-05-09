@@ -29,6 +29,7 @@ class UsuariosController extends Controller
           $registro->no_control = $request->input('no_control');
           $registro->nombre = $request->input('nombre');
           $registro->apellido = $request->input('apellido');
+          $registro->apellido1 = $request->input('apellido1');
           $registro->tipo = $request->input('tipo');
           $registro->carrera = $request->input('carrera');
         $registro->save();
@@ -48,6 +49,7 @@ class UsuariosController extends Controller
       $usuario->no_control = $request->input('no_control');
       $usuario->nombre = $request->input('nombre');
       $usuario->apellido = $request->input('apellido');
+      $usuario->apellido1 = $request->input('apellido1');
       $usuario->tipo = $request->input('tipo');
       $usuario->carrera = $request->input('carrera');
       $usuario->save();
