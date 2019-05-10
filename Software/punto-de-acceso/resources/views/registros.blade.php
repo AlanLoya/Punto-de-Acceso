@@ -31,7 +31,7 @@
       <th><strong>Actividad</strong></th>
       <th><strong>Entrada</strong></th>
       <th><strong>Salida</strong></th>
-      <th><strong>Ubicacion</strong></th>
+      <th><strong>Tiempo Uso</strong></th>
     </tr>
   </thead>
   <tbody>
@@ -47,7 +47,7 @@
       <td>{{$reg->actividad}}</td>
       <td>{{$reg->entrada}}</td>
       <td>{{$reg->salida}}</td>
-      <td>{{$reg->ubicacion}}</td>
+      <td>{{$reg->uso}}</td>
        <td><a href="registros/{{$reg->id}}/edit" style="font-size:24px;color:white" class="fas fa-pencil-alt"></a></td>
        <td><a style="font-size:24px;color: white " type="reset" class="fas fa-trash-alt" OnClick="if ( confirm('Esta Seguro que Desea Borrar ? {{$reg->rfid}}:{{$reg->nombre}} {{$reg->actividad}} {{$reg->entrada}} ')) return location.href='registros/delete/{{$reg->id}}'"></a></td>
       </tr>

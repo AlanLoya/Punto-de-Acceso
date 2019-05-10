@@ -48,6 +48,7 @@ class RegistrosController extends Controller{
       $registro->no_control = $request->input('no_control');
       $registro->nombre = $request->input('nombre');
       $registro->apellido = $request->input('apellido');
+      $registro->apellido1 = $request->input('apellido1');
       $registro->tipo = $request->input('tipo');
       $registro->materia = $request->input('materia');
       $registro->actividad = $request->input('actividad');

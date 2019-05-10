@@ -36,30 +36,26 @@
     </div>
     <div class="col-md-6">
       <div class="form-group">
-          <input type="text" name="apellido" placeholder="Apellido(s)" value="{{$registro->apellido}}" class="form-control form-control-alternative"readonly required/>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <select class="custom-select" name="tipo" value="{{$registro->tipo}}" style="color: black; width:200px;" class="form-control form-control-alternative" readonly required>
-          						<option value="Docente">Docente</option>
-          						<option value="Alumno">Alumno</option>
-
-									</select>
+          <input type="text" name="apellido" placeholder="Apellido Paterno" value="{{$registro->apellido}}" class="form-control form-control-alternative"readonly required/>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <select class="custom-select" name="carrera" value="{{$registro->carrera}}" style="color: black; width:200px;" class="form-control form-control-alternative"readonly required>
-          						<option value="Sistemas">Sistemas</option>
-          						<option value="Informatica">Informatica</option>
-									</select>
+          <input type="text" name="apellido1" placeholder="Apellido Materno" value="{{$registro->apellido1}}" class="form-control form-control-alternative"readonly required/>
       </div>
     </div>
   </div>
-    <div class="row">
+<div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+      <input type="text" name="tipo" placeholder="Tipo de Usuario" value="{{$registro->tipo}}" class="form-control form-control-alternative"readonly required/>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <input type="text" name="carrera" placeholder="Apellido Materno" value="{{$registro->carrera}}" class="form-control form-control-alternative"readonly required/>
+      </div>
+    </div>
     <div class="col-md-6">
       <div class="form-group">
         <select class="custom-select" name="materia" value="{{$registro->materia}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
@@ -74,6 +70,8 @@
                   </select>
       </div>
     </div>
+  </div>
+  <div class="row">
     <div class="col-md-6">
       <div class="form-group">
         <select class="custom-select" name="actividad" value="{{$registro->actividad}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
@@ -83,8 +81,6 @@
                   </select>
       </div>
     </div>
-  </div>
-  <div class="row">
     <div class="col-md-6">
       <div class="form-group">
         <select class="custom-select" name="ubicacion" value="{{$registro->ubicacion}}" style="color: black; width:200px;" class="form-control form-control-alternative"readonly required>
@@ -93,6 +89,8 @@
                   </select>
       </div>
     </div>
+</div>
+<div class="row">
     <div class="col-md-6">
       <div class="form-group">
           <input type="datetime" name="entrada" placeholder="Entrada" value="{{$registro->entrada}}" class="form-control form-control-alternative" required/>
@@ -103,8 +101,8 @@
           <input type="datetime-local" name="salida" placeholder="Salida" value="{{$registro->salida}}" class="form-control form-control-alternative" required/>
       </div>
     </div>
-  </div>
-  <div class="row">
+</div>
+<div class="row">
     <div class="col-md-6">
       <div class="form-group">
         <button type="submit" class="btn btn-icon btn-3 btn-primary">

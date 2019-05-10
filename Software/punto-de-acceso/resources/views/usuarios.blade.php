@@ -24,8 +24,7 @@
       <th scope="col">RFID</th>
       <th scope="col">No. Control</th>
       <th scope="col">Nombre(s)</th>
-      <th scope="col">Apellido Paterno</th>
-      <th scope="col">Apellido Materno</th>
+      <th scope="col">Apellido(s)</th>
       <th scope="col">Tipo de Usuario</th>
       <th scope="col">Carrera</th>
       <th></th>
@@ -39,7 +38,6 @@
         <td>{{$usr->no_control}}</td>
         <td>{{$usr->nombre}}</td>
         <td>{{$usr->apellido}}</td>
-        <td>{{$usr->apellido1}}</td>
         <td>{{$usr->tipo}}</td>
         <td>{{$usr->carrera}}</td>
         <td><a href="usuarios/{{$usr->rfid}}/edit" style="font-size:24px;color:white" class="fas fa-pencil-alt"></a></td>

@@ -39,7 +39,12 @@
     </div>
     <div class="col-md-6">
       <div class="form-group">
-          <input type="text" name="apellido" placeholder="Apellido(s)" class="form-control form-control-alternative"readonly required/>
+          <input type="text" name="apellido" placeholder="Apellido Paterno" class="form-control form-control-alternative"readonly required/>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+          <input type="text" name="apellido1" placeholder="Apellido Materno" class="form-control form-control-alternative"readonly required/>
       </div>
     </div>
   </div>
@@ -62,8 +67,6 @@
         </select>
       </div>
     </div>
-  </div>
-  <div class="row">
   <div class="col-md-6">
     <div class="form-group">
       <select class="custom-select" name="tipo" style="color: black; width:200px;" class="form-control form-control-alternative" required>
@@ -74,6 +77,8 @@
                 </select>
     </div>
   </div>
+</div>
+<div class="row">
   <div class="col-md-6">
     <div class="form-group">
       <select class="custom-select" name="tipo" style="color: black; width:200px;" class="form-control form-control-alternative" required>
@@ -84,8 +89,6 @@
                 </select>
     </div>
   </div>
-</div>
-<div class="row">
   <div class="col-md-6">
     <div class="form-group">
       <select class="custom-select" name="ubicacion" style="color: black; width:300px;" class="form-control form-control-alternative"readonly required>
@@ -95,6 +98,7 @@
       </select>
     </div>
   </div>
+</div>
   <div class="col-md-6">
     <div class="form-group">
       <button type="submit" class="btn btn-icon btn-3 btn-primary">
