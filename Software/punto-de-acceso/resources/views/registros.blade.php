@@ -24,14 +24,14 @@
       <th><strong>RFID</strong></th>
       <th><strong>No. Control</strong></th>
       <th><strong>Nombre(s)</strong></th>
-      <th><strong>Apellido(s)</strong></th>
+      <th><strong>Apellido Paterno</strong></th>
+      <th><strong>Apellido Materno</strong></th>
       <th><strong>Tipo de Usuario</strong></th>
       <th><strong>Carrera</strong></th>
       <th><strong>Materia</strong></th>
       <th><strong>Actividad</strong></th>
       <th><strong>Entrada</strong></th>
       <th><strong>Salida</strong></th>
-      <th><strong>Tiempo Uso</strong></th>
     </tr>
   </thead>
   <tbody>
@@ -41,13 +41,13 @@
       <td>{{$reg->no_control}}</td>
       <td>{{$reg->nombre}}</td>
       <td>{{$reg->apellido}}</td>
+      <td>{{$reg->apellido1}}</td>
       <td>{{$reg->tipo}}</td>
       <td>{{$reg->carrera}}</td>
       <td>{{$reg->materia}}</td>
       <td>{{$reg->actividad}}</td>
       <td>{{$reg->entrada}}</td>
       <td>{{$reg->salida}}</td>
-      <td>{{$reg->uso}}</td>
        <td><a href="registros/{{$reg->id}}/edit" style="font-size:24px;color:white" class="fas fa-pencil-alt"></a></td>
        <td><a style="font-size:24px;color: white " type="reset" class="fas fa-trash-alt" OnClick="if ( confirm('Esta Seguro que Desea Borrar ? {{$reg->rfid}}:{{$reg->nombre}} {{$reg->actividad}} {{$reg->entrada}} ')) return location.href='registros/delete/{{$reg->id}}'"></a></td>
       </tr>

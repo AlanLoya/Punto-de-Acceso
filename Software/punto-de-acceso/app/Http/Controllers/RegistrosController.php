@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Acceso;
 use App\UserITSZO;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class RegistrosController extends Controller{
 
@@ -17,6 +19,12 @@ class RegistrosController extends Controller{
        $usuario = UserITSZO::where('rfid','=', $rfid)->get();
 
      }
+     public function escanear(Request $request)
+     {
+
+
+       return "Hello World!";
+     }
 
 
     public function index(Request $request)
@@ -27,7 +35,26 @@ class RegistrosController extends Controller{
 
     public function store(Request $request)
     {
-        //
+      $registro=new Acceso();
+        $registro->rfid = $request->input('rfid');
+        $registro->no_control = $request->input('no_control');
+        $registro->nombre = $request->input('nombre');
+        $registro->apellido = $request->input('apellido');
+        $registro->apellido1 = $request->input('apellido1');
+        $registro->tipo = $request->input('tipo');
+        $registro->materia = $request->input('opt');
+        $registro->actividad = $request->input('actividad');
+        $registro->entrada = $request->timestamp();
+        $registro->ubicacion = $request->input('ubicacion');
+      $registro->save();
+      return redirect()->action('RegistrosController@index');
+    }
+    public function salida(Request $request)
+    {
+      
+        $registro->salida = $request->timestamp();
+      $registro->save();
+      return redirect()->action('RegistrosController@index');
     }
 
     public function show($id)
@@ -50,7 +77,7 @@ class RegistrosController extends Controller{
       $registro->apellido = $request->input('apellido');
       $registro->apellido1 = $request->input('apellido1');
       $registro->tipo = $request->input('tipo');
-      $registro->materia = $request->input('materia');
+      $registro->materia = $request->input('opt');
       $registro->actividad = $request->input('actividad');
       $registro->entrada = $request->input('entrada');
       $registro->salida = $request->input('salida');

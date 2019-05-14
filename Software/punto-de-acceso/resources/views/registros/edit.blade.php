@@ -14,7 +14,7 @@
   </div>
 </div>
 <br>
-<form method="POST" action="{{action("RegistrosController@update",$registro->id)}}" enctype="multipart/form-data">
+<form name="formulario" method="POST" action="{{action("RegistrosController@update",$registro->id)}}" enctype="multipart/form-data">
   @method('PUT')
   @csrf
   <div class="row">
@@ -58,15 +58,10 @@
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <select class="custom-select" name="materia" value="{{$registro->materia}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
-                      <li>Primero</li>
-                        <option value="Calculo">Calculo</option>
-                        <option value="Programaci'on">Programaci'on</option>
-                        <option value="Base de Datos">Base de Datos</option>
-                      <li>Segundo</li>
-                        <option value="Calculo">Calculo</option>
-                        <option value="Programaci'on">Programaci'on</option>
-                        <option value="Base de Datos">Base de Datos</option>
+        <select class="custom-select" name="actividad" value="{{$registro->actividad}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
+                      <option value="Clase">Clase</option>
+                      <option value="Consulta">Consulta</option>
+                      <option value="Practica">Practica</option>
                   </select>
       </div>
     </div>
@@ -74,11 +69,7 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <select class="custom-select" name="actividad" value="{{$registro->actividad}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
-                      <option value="Clase">Clase</option>
-                      <option value="Consulta">Consulta</option>
-                      <option value="Practica">Practica</option>
-                  </select>
+        @include('registros.select_dinamico')
       </div>
     </div>
     <div class="col-md-6">
