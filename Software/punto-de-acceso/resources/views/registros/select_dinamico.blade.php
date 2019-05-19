@@ -1,22 +1,20 @@
 
 	<body>
-            <label for="">Semestre</label>
-			<select class="custom-select" name="materia" onchange="cambia()" style="color: black; width:300px;" class="form-control form-control-alternative" required>
-				<option>Seleccione
+			<select class="custom-select" name="materia" onchange="cambia()" style="margin-left: 15px; color: black; width:300px;" class="form-control form-control-alternative" required>
+				<option>Semestre
 				<option value="10">Consulta
-
 				<option value="1">Primero
 				<option value="2">Segundo
 				<option value="3">Tercero
 				<option value="4">Cuarto
-                <option value="5">Quinto
-                <option value="6">Sexto
-                <option value="7">Septimo
-                <option value="8">Octavo
+        <option value="5">Quinto
+        <option value="6">Sexto
+        <option value="7">Septimo
+        <option value="8">Octavo
 			</select>
-			<label for="">Materia</label>
-			<select class="custom-select" id="materias_box" name="opt"style="color: black; width:300px;" class="form-control form-control-alternative" required>
-				<option value="-">
+			<label style="margin-left: 15px;" for="">Materia</label>
+			<select class="custom-select" id="materias_box" name="opt" style="margin-left: 15px; color: black; width:300px;" class="form-control form-control-alternative" required>
+				<option value="Materia">
 			</select>
 
 		<script type="text/javascript">

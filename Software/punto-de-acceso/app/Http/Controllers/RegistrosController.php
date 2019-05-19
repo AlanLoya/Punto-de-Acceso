@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Acceso;
 use App\UserITSZO;
+use Carbon\Carbon;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
@@ -19,14 +20,43 @@ class RegistrosController extends Controller{
        $usuario = UserITSZO::where('rfid','=', $rfid)->get();
 
      }
-     public function escanear(Request $request)
+
+     public function registroadd()
      {
-
-
-       return "Hello World!";
+       $reg = UserITSZO::all()->first();
+       return view('registros.agregar', compact('reg'));
      }
 
+     public function escanear($rfid)
+     {
+       ///////    Funcion python Lectura RFID      ///////////
+       /////// Funcion para validar RFID en la tabla
+       //$result = shell_exec("python " . app_path(). "\http\controllers\ORB\test.py " . escapeshellarg($string));
+       $process = new Process('C:/Users/AlanArturo/AppData/Local/Programs/Python/Python37-32/python C:/xampp/htdocs/punto-de-acceso/public/argon/python/Read.py');
+       $process->run();
+       // executes after the command finishes
+       if (!$process->isSuccessful()) {
+         throw new ProcessFailedException($process);
+       }
+       else{
+         return $process->getOutput();
+       }
+      /* $py=11121314;
+       $usuario=UserITSZO::find($py);
+       return view('registros.agregar-registro',compact('usuario')); */
+     }
 
+     public function salida(Request $request, $id)
+     {
+       $salida=Acceso:: find($id);
+       //return strtotime($salida->entrada);
+       $salida->salida=now();
+       $salida->uso=date(strtotime($salida->salida) - strtotime($salida->entrada));
+       $salida->save();
+       return redirect()->action('RegistrosController@index');
+
+     }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public function index(Request $request)
     {
       $registro=Acceso::nombre($request->get('nombre'))->paginate(20);
@@ -41,18 +71,12 @@ class RegistrosController extends Controller{
         $registro->nombre = $request->input('nombre');
         $registro->apellido = $request->input('apellido');
         $registro->apellido1 = $request->input('apellido1');
+        $registro->carrera = $request->input('carrera');
         $registro->tipo = $request->input('tipo');
         $registro->materia = $request->input('opt');
         $registro->actividad = $request->input('actividad');
-        $registro->entrada = $request->timestamp();
+        $registro->entrada = now();
         $registro->ubicacion = $request->input('ubicacion');
-      $registro->save();
-      return redirect()->action('RegistrosController@index');
-    }
-    public function salida(Request $request)
-    {
-      
-        $registro->salida = $request->timestamp();
       $registro->save();
       return redirect()->action('RegistrosController@index');
     }
@@ -76,6 +100,7 @@ class RegistrosController extends Controller{
       $registro->nombre = $request->input('nombre');
       $registro->apellido = $request->input('apellido');
       $registro->apellido1 = $request->input('apellido1');
+      $registro->carrera = $request->input('carrera');
       $registro->tipo = $request->input('tipo');
       $registro->materia = $request->input('opt');
       $registro->actividad = $request->input('actividad');

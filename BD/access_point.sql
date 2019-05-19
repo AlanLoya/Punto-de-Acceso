@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-04-2019 a las 02:49:37
+-- Tiempo de generación: 19-05-2019 a las 20:20:11
 -- Versión del servidor: 10.1.35-MariaDB
 -- Versión de PHP: 7.2.9
 
@@ -31,24 +31,26 @@ SET time_zone = "+00:00";
 CREATE TABLE `accesos` (
   `id` int(10) NOT NULL,
   `rfid` bigint(20) NOT NULL,
-  `no_control` int(10) NOT NULL,
-  `nombre` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `apellido` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tipo` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_control` int(10) DEFAULT NULL,
+  `nombre` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `apellido` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `apellido1` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tipo` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `carrera` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `materia` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `actividad` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `entrada` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `salida` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `uso` time NOT NULL
+  `entrada` timestamp NULL DEFAULT NULL,
+  `salida` timestamp NULL DEFAULT NULL,
+  `uso` time DEFAULT NULL,
+  `ubicacion` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `accesos`
 --
 
-INSERT INTO `accesos` (`id`, `rfid`, `no_control`, `nombre`, `apellido`, `tipo`, `materia`, `actividad`, `entrada`, `salida`, `uso`) VALUES
-(1, 1, 15040110, 'Alan Arturo', 'Loya Favela', 'Alumno', '1231-Investigacion', 'Clases', '2019-04-16 00:18:42', '2019-04-15 13:00:00', '01:00:00'),
-(2, 2, 15040112, 'Beatriz', 'Miranda', 'Alumno', '212-Sistemas Embebidos', 'Clases', '2019-04-16 00:39:50', '2019-04-15 13:00:00', '00:19:00');
+INSERT INTO `accesos` (`id`, `rfid`, `no_control`, `nombre`, `apellido`, `apellido1`, `tipo`, `carrera`, `materia`, `actividad`, `entrada`, `salida`, `uso`, `ubicacion`) VALUES
+(30, 11121314, 15040110, 'Alan Arturo', 'Loya', 'Favela', 'Alumno', 'Sistemas', 'Sistemas Embebidos TID-1604', 'Practica', '2019-05-18 02:13:59', NULL, NULL, 'Lab. Linux');
 
 -- --------------------------------------------------------
 
@@ -79,7 +81,7 @@ CREATE TABLE `password_resets` (
 --
 
 INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
-('arturo-ya@live.com', '$2y$10$v/zQrgKX6TGqoveySISsYev.hPci3WlTeDfqYCfaz9bHBWeVVAZNW', '2019-03-15 00:28:00');
+('arturo-ya@live.com', '$2y$10$Hvi.WYaBmERI0wHG6hM61.CQOXDFWKg4CP.LOwC34CH2FB1dV5sjC', '2019-05-09 02:21:46');
 
 -- --------------------------------------------------------
 
@@ -103,7 +105,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Alan Arturo Loya', 'arturo-ya@live.com', NULL, '$2y$10$jOY8UmsYJg1VnTOhWiSOVOwlRrj0EQGs34yQZCVny7BXPFFOWFIWS', NULL, '2019-03-14 07:49:32', '2019-03-14 07:49:32');
+(1, 'Alan Arturo Loya', 'arturo-ya@live.com', NULL, '$2y$10$zbGT9SQKxagOC05NfLwMbeHsxPO.u9NX/RcyZPoJP3uZX.o.b/ldS', NULL, '2019-05-09 02:49:38', '2019-05-09 02:49:38');
 
 -- --------------------------------------------------------
 
@@ -116,19 +118,17 @@ CREATE TABLE `user_i_t_s_z_o_s` (
   `no_control` int(10) NOT NULL,
   `nombre` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `apellido` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tipo` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL
+  `tipo` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `carrera` char(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `apellido1` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `user_i_t_s_z_o_s`
 --
 
-INSERT INTO `user_i_t_s_z_o_s` (`rfid`, `no_control`, `nombre`, `apellido`, `tipo`) VALUES
-(1, 15040110, 'Alan Arturo', 'Loya Favela', 'Alumno'),
-(2, 15040112, 'Beatriz', 'Miranda Miranda', 'Alumno'),
-(3, 15040102, 'Samanta', 'Castro Hernandez', 'Alumno'),
-(4, 15040099, 'Jesus', 'Albino Calder\'on', 'Alumno'),
-(5, 2, 'Jose Artemio', 'Barraza Alvarado', 'Docente');
+INSERT INTO `user_i_t_s_z_o_s` (`rfid`, `no_control`, `nombre`, `apellido`, `tipo`, `carrera`, `apellido1`) VALUES
+(11121314, 15040110, 'Alan Arturo', 'Loya', 'Alumno', 'Sistemas', 'Favela');
 
 --
 -- Índices para tablas volcadas
@@ -169,7 +169,7 @@ ALTER TABLE `user_i_t_s_z_o_s`
 -- AUTO_INCREMENT de la tabla `accesos`
 --
 ALTER TABLE `accesos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `migrations`

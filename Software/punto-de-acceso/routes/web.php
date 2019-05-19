@@ -25,13 +25,13 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/registros', 'RegistrosController@index')->name('Registros');
   /////////////////////////////////////////////////////////////////////////////////////////////////
   Route::get('/agregar-usuario', function () {
-      return view('usuarios.agregar');
+    $datos=UserITSZO::all();
+      return view('usuarios.agregar',compact('datos'));
   });
-  Route::get('/agregar-registro', function () {
-      return view('registros.agregar');
-  });
+  Route::get('/agregar-registro', 'RegistrosController@registroadd' );
   /////////////////////////////////////////////////////////////////////////////////////////////////
-  Route::get("/registros/escanear","RegistrosController@escanear");
+  Route::get("/agregar-registro/escanear/{rfid}","RegistrosController@escanear");
+  Route::get("/salida/{id}","RegistrosController@salida");
   /////////////////////////////////////////////////////////////////////////////////////////////////
   Route::get("usuarios/delete/{rfid}","UsuariosController@destroy");
   Route::get("registros/delete/{id}","RegistrosController@destroy");
@@ -40,7 +40,4 @@ Route::group(['middleware' => 'auth'], function () {
   route::get('registros/{id}/edit', 'RegistrosController@edit');
   ////////////////////////////////////////////////////////////////////////////////////////////////
   Route::get('/export-registros', 'ExcelController@export');
-  Route::get('/select', function () {
-      return view('registros.select_dinamico');
-  });
 });
