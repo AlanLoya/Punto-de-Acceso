@@ -28,9 +28,15 @@ Route::group(['middleware' => 'auth'], function () {
     $datos=UserITSZO::all();
       return view('usuarios.agregar',compact('datos'));
   });
+  /////////////////////////////////////////////////////////////////////////////////////////////////
   Route::get('/agregar-registro', 'RegistrosController@registroadd' );
+
+  Route::get('/agregar-usuario', 'UsuariosController@usuarioadd' );
   /////////////////////////////////////////////////////////////////////////////////////////////////
   Route::get("/agregar-registro/escanear/{rfid}","RegistrosController@escanear");
+
+  Route::get("/agregar-usuario/escanear/{rfid}","UsuariosController@escanear");
+  /////////////////////////////////////////////////////////////////////////////////////////////////
   Route::get("/salida/{id}","RegistrosController@salida");
   /////////////////////////////////////////////////////////////////////////////////////////////////
   Route::get("usuarios/delete/{rfid}","UsuariosController@destroy");

@@ -29,21 +29,16 @@ class RegistrosController extends Controller{
 
      public function escanear($rfid)
      {
-       ///////    Funcion python Lectura RFID      ///////////
-       /////// Funcion para validar RFID en la tabla
-       //$result = shell_exec("python " . app_path(). "\http\controllers\ORB\test.py " . escapeshellarg($string));
-       $process = new Process('C:/Users/AlanArturo/AppData/Local/Programs/Python/Python37-32/python C:/xampp/htdocs/punto-de-acceso/public/argon/python/Read.py');
-       $process->run();
-       // executes after the command finishes
-       if (!$process->isSuccessful()) {
-         throw new ProcessFailedException($process);
+       $arg=0;
+       $output = exec('python "/public/argon/RFID/MFRC522-python-master/Read.py" "'.$arg.'"');
+       if (empty($output)) {
+         return ("Error al Escanear, Vuelva a Intentar.");
        }
-       else{
-         return $process->getOutput();
+       else {
+         $usuario=UserITSZO::find($output);
+         return view('registros.agregar-registro',compact('usuario'));
        }
-      /* $py=11121314;
-       $usuario=UserITSZO::find($py);
-       return view('registros.agregar-registro',compact('usuario')); */
+
      }
 
      public function salida(Request $request, $id)
