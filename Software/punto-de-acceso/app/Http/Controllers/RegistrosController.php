@@ -30,9 +30,10 @@ class RegistrosController extends Controller{
      public function escanear($rfid)
      {
        $arg=0;
-       $output = exec('python "/public/argon/RFID/MFRC522-python-master/Read.py" "'.$arg.'"');
+       //$output = exec('python "/public/argon/RFID/MFRC522-python-master/Read.py" "'.$arg.'"');
+       $output = 11121314;
        if (empty($output)) {
-         return ("Error al Escanear, Vuelva a Intentar.");
+         return ("Error");
        }
        else {
          $usuario=UserITSZO::find($output);
@@ -73,6 +74,7 @@ class RegistrosController extends Controller{
         $registro->entrada = now();
         $registro->ubicacion = $request->input('ubicacion');
       $registro->save();
+
       return redirect()->action('RegistrosController@index');
     }
 

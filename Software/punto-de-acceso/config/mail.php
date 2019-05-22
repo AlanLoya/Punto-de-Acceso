@@ -2,8 +2,8 @@
 
 return [
     'driver' => env('MAIL_DRIVER', 'smtp'),
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
-    'port' => env('MAIL_PORT', 587),
+    'host' => env('MAIL_HOST', 'smtp.mailtrap.io'),
+    'port' => env('MAIL_PORT', 2525),
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'PAccesoISC@gmail.com'),
         'name' => env('MAIL_FROM_NAME', 'Punto de Acceso Microcontroladores'),],
