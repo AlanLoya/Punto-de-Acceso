@@ -71,6 +71,8 @@
                     <option selected value="">Ubicacion:</option>
                     <option value="Microcontroladores">Microcontroladores</option>
                     <option value="Lab. Linux">Lab. Linux</option>
+                    <option value="Lab. Redes">Lab. Redes</option>
+                    <option value="Lab. iMac">Lab. iMac</option>
                     <option value="Centro de Desarrollo de Software">Centro de Desarrollo de Software</option>
       </select>
     </div>

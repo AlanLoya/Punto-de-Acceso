@@ -32,15 +32,16 @@ class UsuariosController extends Controller
 
     public function escanear($rfid)
     {
-      //$arg=0;
-      //$output = exec('python "/public/argon/RFID/MFRC522-python-master/Read.py" "'.$arg.'"');
-      $output = 11121314;
+      $arg=0;
+      $output = exec('python "/public/argon/RFID/MFRC522-python-master/Read.py" "'.$arg.'"');
+      //$output = 11121314;
       $usuario=UserITSZO::find($output);
       return view('usuarios.agregar-usuario',compact('usuario'));
     }
 
     public function store(Request $request)
       {
+        try {
         $registro=new UserITSZO();
           $registro->rfid = $request->input('rfid');
           $registro->no_control = $request->input('no_control');
@@ -51,6 +52,10 @@ class UsuariosController extends Controller
           $registro->carrera = $request->input('carrera');
         $registro->save();
         return redirect()->action('UsuariosController@index');
+      }
+        catch (QueryException $e) {
+          return ("RFID Duplicado");
+        }
       }
 
     public function edit($rfid)

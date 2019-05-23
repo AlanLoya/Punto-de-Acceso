@@ -30,8 +30,8 @@ class RegistrosController extends Controller{
      public function escanear($rfid)
      {
        $arg=0;
-       //$output = exec('python "/public/argon/RFID/MFRC522-python-master/Read.py" "'.$arg.'"');
-       $output = 11121314;
+       $output = exec('python "/public/argon/RFID/MFRC522-python-master/Read.py" "'.$arg.'"');
+       //$output = 11121314;
        if (empty($output)) {
          return ("Error");
        }

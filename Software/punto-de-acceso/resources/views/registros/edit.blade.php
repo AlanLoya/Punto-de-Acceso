@@ -76,7 +76,10 @@
       <div class="form-group">
         <select class="custom-select" name="ubicacion" value="{{$registro->ubicacion}}" style="color: black; width:200px;" class="form-control form-control-alternative"readonly required>
                       <option value="Microcontroladores">Microcontroladores</option>
-                      <option value="....">....</option>
+                      <option value="Lab. Linux">Lab. Linux</option>
+                      <option value="Lab. Redes">Lab. Redes</option>
+                      <option value="Lab. iMac">Lab. iMac</option>
+                      <option value="Centro de Desarrollo de Software">Centro de Desarrollo de Software</option>
                   </select>
       </div>
     </div>
