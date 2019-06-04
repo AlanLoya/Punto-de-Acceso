@@ -26,6 +26,7 @@
                                     </span>
                                 @endif
                             </div>
+                            
                             <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
                                 <div class="input-group input-group-alternative">
                                     <div class="input-group-prepend">

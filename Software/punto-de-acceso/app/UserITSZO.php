@@ -14,4 +14,5 @@ public function scopeNombre($query, $nombre){
     $query->where('nombre', 'LIKE', "%$nombre%");
   }
 }
+
 }
