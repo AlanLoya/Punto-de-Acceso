@@ -1,6 +1,6 @@
 
 	<body>
-			<select class="custom-select" name="materia" onchange="cambia()" style="margin-left: 15px; color: black; width:300px;" class="form-control form-control-alternative" required>
+			<select class="custom-select" name="materia" onchange="cambia()" style="margin-left: 15px; color: black; width:200px;" class="form-control form-control-alternative" required>
 				<option>Semestre
 				<option value="10">Consulta
 				<option value="1">Primero
@@ -13,7 +13,7 @@
         <option value="8">Octavo
 			</select>
 			<label style="margin-left: 15px;" for="">Materia</label>
-			<select class="custom-select" id="materias_box" name="opt" style="margin-left: 15px; color: black; width:300px;" class="form-control form-control-alternative" required>
+			<select class="custom-select" id="materias_box" name="opt" style="margin-left: 15px; color: black; width:200px;" class="form-control form-control-alternative" required>
 				<option value="Materia">
 			</select>
 

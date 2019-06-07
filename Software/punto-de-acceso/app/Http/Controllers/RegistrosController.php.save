@@ -33,8 +33,8 @@ class RegistrosController extends Controller{
      {
        $filename = '/home/pi/Documents/RFID/MFRC522-python-master/Read.txt';
 	$contents = File::get($filename);
-	 $usuario = UserITSZO::where('rfid','=', $contents)->get();
-        return  view('registros.agregar-registro',compact('usuario','contents'));
+	 $usuario = UserITSZO::where('rfid','=', $contents)->get(); 
+ return  view('registros.agregar-registro',compact('usuario','contents'));
       ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
      }

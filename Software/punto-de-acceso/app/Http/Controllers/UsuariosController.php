@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\UserITSZO;
+use File;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
@@ -32,11 +33,9 @@ class UsuariosController extends Controller
 
     public function escanear($rfid)
     {
-      $arg=0;
-      $output = exec('python "/public/argon/RFID/MFRC522-python-master/Read.py" "'.$arg.'"');
-      //$output = 32;
-      $usuario=UserITSZO::find($output);
-      return view('usuarios.agregar-usuario',compact('usuario','output'));
+      $filename = '/home/pi/Documents/RFID/MFRC522-python-master/Read.txt';
+        $contents = File::get($filename);
+      return view('usuarios.agregar-usuario',compact('contents'));
     }
 
     public function store(Request $request)

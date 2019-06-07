@@ -51,7 +51,7 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <select class="custom-select"  style="color: black; width:300px;" class="form-control form-control-alternative" >
+        <select class="custom-select"  style="color: black; width:200px;" class="form-control form-control-alternative" >
           						<option selected value="">Tipo de Usuario:</option>
           						<option value="Docente">Docente</option>
           						<option value="Alumno">Alumno</option>
@@ -60,7 +60,7 @@
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <select class="custom-select" name="carrera" style="color: black; width:300px;" class="form-control form-control-alternative" >
+        <select class="custom-select" name="carrera" style="color: black; width:200px;" class="form-control form-control-alternative" >
                       <option selected value="">Carrera:</option>
                       <option value="Sistemas">Sistemas</option>
                       <option value="Informatica">Informatica</option>

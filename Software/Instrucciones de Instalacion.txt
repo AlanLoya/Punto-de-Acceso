@@ -1,0 +1,6 @@
+Instrucciones para montar el sistema:
+ 1.Dar permisos a la carpeta si es Necesario.
+ 2.Abrir terminal
+ 3.Copear la ruta de la carpeta y poner "cd" con la ruta.
+ 4.Poner en la terminal el comando "composer install".
+ 5.Correr el servidor con el comando "php artisan serve".

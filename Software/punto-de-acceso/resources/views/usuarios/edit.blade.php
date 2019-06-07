@@ -49,7 +49,7 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <select class="custom-select" name="tipo" value="{{$usuario->tipo}}" style="color: black; width:300px;" class="form-control form-control-alternative" required>
+        <select class="custom-select" name="tipo" value="{{$usuario->tipo}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
           						<option value="Docente">Docente</option>
           						<option value="Alumno">Alumno</option>
 				</select>
@@ -57,7 +57,7 @@
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <select class="custom-select" name="carrera" value="{{$usuario->carrera}}" style="color: black; width:300px;" class="form-control form-control-alternative" required>
+        <select class="custom-select" name="carrera" value="{{$usuario->carrera}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
                       <option value="Sistemas">Sistemas</option>
                       <option value="Informatica">Informatica</option>
         </select>
