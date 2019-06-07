@@ -39,10 +39,10 @@ Route::group(['middleware' => 'auth'], function () {
   /////////////////////////////////////////////////////////////////////////////////////////////////
   Route::get("/salida/{id}","RegistrosController@salida");
   /////////////////////////////////////////////////////////////////////////////////////////////////
-  Route::get("usuarios/delete/{rfid}","UsuariosController@destroy");
+  Route::get("usuarios/delete/{no_control}","UsuariosController@destroy");
   Route::get("registros/delete/{id}","RegistrosController@destroy");
   ////////////////////////////////////////////////////////////////////////////////////////////////
-  route::get('usuarios/{rfid}/edit', 'UsuariosController@edit');
+  route::get('usuarios/{no_control}/edit', 'UsuariosController@edit');
   route::get('registros/{id}/edit', 'RegistrosController@edit');
   ////////////////////////////////////////////////////////////////////////////////////////////////
   Route::get('/export-registros', 'ExcelController@export');

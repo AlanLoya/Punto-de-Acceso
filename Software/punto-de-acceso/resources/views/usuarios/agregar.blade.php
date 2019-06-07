@@ -14,7 +14,7 @@
   </div>
 </div>
 <br>
-<form action="/agregar-usuario/escanear/{{$reg->rfid}}">
+<form action="/agregar-usuario/escanear/{{$reg->no_control}}">
 	@csrf
   <div class="row">
     <div class="col-md-6">

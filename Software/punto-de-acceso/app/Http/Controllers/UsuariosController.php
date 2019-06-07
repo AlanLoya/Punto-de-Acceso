@@ -34,9 +34,9 @@ class UsuariosController extends Controller
     {
       $arg=0;
       $output = exec('python "/public/argon/RFID/MFRC522-python-master/Read.py" "'.$arg.'"');
-      //$output = 11121314;
+      //$output = 32;
       $usuario=UserITSZO::find($output);
-      return view('usuarios.agregar-usuario',compact('usuario'));
+      return view('usuarios.agregar-usuario',compact('usuario','output'));
     }
 
     public function store(Request $request)
@@ -58,15 +58,15 @@ class UsuariosController extends Controller
         }
       }
 
-    public function edit($rfid)
+    public function edit($no_control)
     {
-      $usuario = UserITSZO::find($rfid);
+      $usuario = UserITSZO::find($no_control);
       return view('usuarios.edit', compact('usuario'));
     }
 
-    public function update(Request $request, $rfid)
+    public function update(Request $request, $no_control)
     {
-      $usuario= UserITSZO::find($rfid);
+      $usuario= UserITSZO::find($no_control);
       $usuario->rfid = $request->input('rfid');
       $usuario->no_control = $request->input('no_control');
       $usuario->nombre = $request->input('nombre');
@@ -78,12 +78,12 @@ class UsuariosController extends Controller
       return redirect()->action('UsuariosController@index');
     }
 
-     public function destroy($rfid)
+     public function destroy($no_control)
      {
-       $usuarios=UserITSZO::find($rfid);
-       if ($usuarios->delete($rfid)){
+       $usuarios=UserITSZO::find($no_control);
+       if ($usuarios->delete($no_control)){
          return redirect("usuarios/");
        }
-       else return "El ".$rfid."No se pudo borrar";
+       else return "El ".$no_control."No se pudo borrar";
      }
 }
