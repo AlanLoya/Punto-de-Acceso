@@ -19,7 +19,7 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <input type="number" value="{{$usuario->rfid}}" name="rfid" placeholder="RFID" class="form-control form-control-alternative" required/>
+        <input type="number" value="{{$output}}" name="rfid" placeholder="RFID" class="form-control form-control-alternative" required/>
         <button type="submit"  class="btn btn-icon btn-3 btn-primary">
         <span class="btn-inner--icon"><i class="icon fa fa-credit-card"></i></span>
         <span class="btn-inner--text">Escanear</span></button>

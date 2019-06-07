@@ -14,7 +14,7 @@
   </div>
 </div>
 <br>
-<form method="POST" action="{{action("UsuariosController@update",$usuario->rfid)}}" enctype="multipart/form-data">
+<form method="POST" action="{{action("UsuariosController@update",$usuario->no_control)}}" enctype="multipart/form-data">
   @method('PUT')
   @csrf
   <div class="row">
