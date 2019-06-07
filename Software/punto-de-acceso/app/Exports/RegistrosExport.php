@@ -18,19 +18,21 @@ class RegistrosExport implements FromCollection,ShouldAutoSize, WithHeadings
             'RFID',
             'No. Control',
             'Nombre(s)',
-            'Apellido(s)',
+            'Apellido Paterno',
+            'Apellido Materno',
             'Tipo',
             'Carrera',
             'Materia',
             'Actividad',
+            'Ubicación',
             'Entrada',
             'Salida',
-            'Uso'
+            'Tiempo de Uso'
         ];
     }
     public function collection()
     {
-        return Acceso::select('rfid','no_control','nombre','apellido','tipo','carrera','materia','actividad','entrada','salida','uso')->get() ;
+        return Acceso::select('rfid','no_control','nombre','apellido','apellido1','tipo','carrera','materia','actividad','ubicacion','entrada','salida','uso')->get() ;
         //return Libros::all()->where('ubicacion', 'LIKE', "%ISC%");
     }
 }

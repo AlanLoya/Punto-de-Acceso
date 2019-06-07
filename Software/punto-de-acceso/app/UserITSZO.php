@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserITSZO extends Model
 {
-  protected $primaryKey = 'rfid';
+  protected $primaryKey = 'no_control';
   public $timestamps = false;
 
 public function scopeNombre($query, $nombre){
@@ -14,4 +14,5 @@ public function scopeNombre($query, $nombre){
     $query->where('nombre', 'LIKE', "%$nombre%");
   }
 }
+
 }

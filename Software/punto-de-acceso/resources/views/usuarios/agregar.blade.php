@@ -14,39 +14,44 @@
   </div>
 </div>
 <br>
-<form method="POST" action="/usuarios">
+<form action="/agregar-usuario/escanear/{{$reg->no_control}}">
 	@csrf
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <input type="number" value="" name="rfid" placeholder="RFID" class="form-control form-control-alternative" required/>
-        <button type="submit" onclick="#" class="btn btn-icon btn-3 btn-primary">
+        <input type="number" value="" name="rfid" placeholder="RFID" class="form-control form-control-alternative"/>
+        <button type="submit" class="btn btn-icon btn-3 btn-primary">
         <span class="btn-inner--icon"><i class="icon fa fa-credit-card"></i></span>
         <span class="btn-inner--text">Escanear</span></button>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <input type="number" name="no_control" placeholder="No. Control" class="form-control form-control-alternative" required/>
+        <input type="number"  placeholder="No. Control" class="form-control form-control-alternative"/>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-          <input type="text" name="nombre" placeholder="Nombre(s)" class="form-control form-control-alternative" required/>
+          <input type="text"  placeholder="Nombre(s)" class="form-control form-control-alternative"/>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-          <input type="text" name="apellido" placeholder="Apellido(s)" class="form-control form-control-alternative" required/>
+          <input type="text"  placeholder="Apellido Paterno" class="form-control form-control-alternative"/>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+          <input type="text"  placeholder="Apellido Materno" class="form-control form-control-alternative"/>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <select class="custom-select" name="tipo" style="color: black; width:300px;" class="form-control form-control-alternative" required>
+        <select class="custom-select"  style="color: black; width:300px;" class="form-control form-control-alternative" >
           						<option selected value="">Tipo de Usuario:</option>
           						<option value="Docente">Docente</option>
           						<option value="Alumno">Alumno</option>
@@ -55,7 +60,7 @@
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <select class="custom-select" name="carrera" style="color: black; width:300px;" class="form-control form-control-alternative" required>
+        <select class="custom-select" name="carrera" style="color: black; width:300px;" class="form-control form-control-alternative" >
                       <option selected value="">Carrera:</option>
                       <option value="Sistemas">Sistemas</option>
                       <option value="Informatica">Informatica</option>

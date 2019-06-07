@@ -1452,7 +1452,7 @@ pre code
     }
     .col-md-6
     {
-        max-width: 50%;
+        max-width: 33%;
 
         flex: 0 0 50%;
     }
@@ -16610,7 +16610,7 @@ a.text-gray-dark:focus
 
 .text-light
 {
-    color: #ced4da !important;
+    color: #0277bd !important;
 }
 
 a.text-light:hover,

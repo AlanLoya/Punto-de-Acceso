@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 16-04-2019 a las 02:49:37
--- Versión del servidor: 10.1.35-MariaDB
--- Versión de PHP: 7.2.9
+-- Servidor: localhost:3306
+-- Tiempo de generación: 02-06-2019 a las 13:17:24
+-- Versión del servidor: 10.1.38-MariaDB-0+deb9u1
+-- Versión de PHP: 7.0.33-0+deb9u3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -30,25 +28,28 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `accesos` (
   `id` int(10) NOT NULL,
-  `rfid` bigint(20) NOT NULL,
-  `no_control` int(10) NOT NULL,
-  `nombre` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `apellido` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tipo` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rfid` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `no_control` int(10) DEFAULT NULL,
+  `nombre` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `apellido` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `apellido1` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tipo` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `carrera` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `materia` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `actividad` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `entrada` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `salida` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `uso` time NOT NULL
+  `ubicacion` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `entrada` timestamp NULL DEFAULT NULL,
+  `salida` timestamp NULL DEFAULT NULL,
+  `uso` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `accesos`
 --
 
-INSERT INTO `accesos` (`id`, `rfid`, `no_control`, `nombre`, `apellido`, `tipo`, `materia`, `actividad`, `entrada`, `salida`, `uso`) VALUES
-(1, 1, 15040110, 'Alan Arturo', 'Loya Favela', 'Alumno', '1231-Investigacion', 'Clases', '2019-04-16 00:18:42', '2019-04-15 13:00:00', '01:00:00'),
-(2, 2, 15040112, 'Beatriz', 'Miranda', 'Alumno', '212-Sistemas Embebidos', 'Clases', '2019-04-16 00:39:50', '2019-04-15 13:00:00', '00:19:00');
+INSERT INTO `accesos` (`id`, `rfid`, `no_control`, `nombre`, `apellido`, `apellido1`, `tipo`, `carrera`, `materia`, `actividad`, `ubicacion`, `entrada`, `salida`, `uso`) VALUES
+(38, '93CCCA16', 15040110, 'Alan Arturo', 'Loya', 'Favela', 'Alumno', 'Sistemas', 'Sistemas Embebidos TID-1604', 'Practica', 'Microcontroladores', '2019-06-02 17:48:02', '2019-06-02 17:55:52', '00:07:50'),
+(39, 'AB90972C', 72, 'Jose Artemio', 'Barraza', 'Alvarado', 'Docente', 'Sistemas', 'Sistemas Embebidos TID-1604', 'Clase', 'Lab. Linux', '2019-06-02 17:49:15', '2019-06-02 17:56:05', '00:04:10');
 
 -- --------------------------------------------------------
 
@@ -79,7 +80,7 @@ CREATE TABLE `password_resets` (
 --
 
 INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
-('arturo-ya@live.com', '$2y$10$v/zQrgKX6TGqoveySISsYev.hPci3WlTeDfqYCfaz9bHBWeVVAZNW', '2019-03-15 00:28:00');
+('arturo-ya@live.com', '$2y$10$SflnKnOkDmHN2A6x6j6Pt.vfDGtEV.8P0nYNQrlY30v2Q/q8E4Neq', '2019-05-22 19:54:16');
 
 -- --------------------------------------------------------
 
@@ -103,7 +104,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Alan Arturo Loya', 'arturo-ya@live.com', NULL, '$2y$10$jOY8UmsYJg1VnTOhWiSOVOwlRrj0EQGs34yQZCVny7BXPFFOWFIWS', NULL, '2019-03-14 07:49:32', '2019-03-14 07:49:32');
+(1, 'Alan Arturo Loya', 'arturo-ya@live.com', NULL, '$2y$10$zbGT9SQKxagOC05NfLwMbeHsxPO.u9NX/RcyZPoJP3uZX.o.b/ldS', NULL, '2019-05-09 02:49:38', '2019-05-09 02:49:38');
 
 -- --------------------------------------------------------
 
@@ -112,23 +113,22 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 --
 
 CREATE TABLE `user_i_t_s_z_o_s` (
-  `rfid` bigint(20) NOT NULL,
+  `rfid` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `no_control` int(10) NOT NULL,
   `nombre` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `apellido` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tipo` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL
+  `apellido1` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tipo` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `carrera` char(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `user_i_t_s_z_o_s`
 --
 
-INSERT INTO `user_i_t_s_z_o_s` (`rfid`, `no_control`, `nombre`, `apellido`, `tipo`) VALUES
-(1, 15040110, 'Alan Arturo', 'Loya Favela', 'Alumno'),
-(2, 15040112, 'Beatriz', 'Miranda Miranda', 'Alumno'),
-(3, 15040102, 'Samanta', 'Castro Hernandez', 'Alumno'),
-(4, 15040099, 'Jesus', 'Albino Calder\'on', 'Alumno'),
-(5, 2, 'Jose Artemio', 'Barraza Alvarado', 'Docente');
+INSERT INTO `user_i_t_s_z_o_s` (`rfid`, `no_control`, `nombre`, `apellido`, `apellido1`, `tipo`, `carrera`) VALUES
+('AB90972C', 72, 'Jose Artemio', 'Barraza', 'Alvarado', 'Docente', 'Sistemas'),
+('93CCCA16', 15040110, 'Alan Arturo', 'Loya', 'Favela', 'Alumno', 'Sistemas');
 
 --
 -- Índices para tablas volcadas
@@ -157,9 +157,9 @@ ALTER TABLE `users`
 -- Indices de la tabla `user_i_t_s_z_o_s`
 --
 ALTER TABLE `user_i_t_s_z_o_s`
-  ADD PRIMARY KEY (`rfid`),
-  ADD UNIQUE KEY `rfid` (`rfid`),
-  ADD UNIQUE KEY `no_control` (`no_control`);
+  ADD PRIMARY KEY (`no_control`) USING BTREE,
+  ADD UNIQUE KEY `no_control` (`no_control`),
+  ADD UNIQUE KEY `rfid` (`rfid`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -169,21 +169,17 @@ ALTER TABLE `user_i_t_s_z_o_s`
 -- AUTO_INCREMENT de la tabla `accesos`
 --
 ALTER TABLE `accesos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

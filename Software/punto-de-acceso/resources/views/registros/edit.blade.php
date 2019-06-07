@@ -14,7 +14,7 @@
   </div>
 </div>
 <br>
-<form method="POST" action="{{action("RegistrosController@update",$registro->id)}}" enctype="multipart/form-data">
+<form name="formulario" method="POST" action="{{action("RegistrosController@update",$registro->id)}}" enctype="multipart/form-data">
   @method('PUT')
   @csrf
   <div class="row">
@@ -36,48 +36,29 @@
     </div>
     <div class="col-md-6">
       <div class="form-group">
-          <input type="text" name="apellido" placeholder="Apellido(s)" value="{{$registro->apellido}}" class="form-control form-control-alternative"readonly required/>
+          <input type="text" name="apellido" placeholder="Apellido Paterno" value="{{$registro->apellido}}" class="form-control form-control-alternative"readonly required/>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+          <input type="text" name="apellido1" placeholder="Apellido Materno" value="{{$registro->apellido1}}" class="form-control form-control-alternative"readonly required/>
       </div>
     </div>
   </div>
-  <div class="row">
+<div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <select class="custom-select" name="tipo" value="{{$registro->tipo}}" style="color: black; width:200px;" class="form-control form-control-alternative" readonly required>
-          						<option value="Docente">Docente</option>
-          						<option value="Alumno">Alumno</option>
-
-									</select>
+      <input type="text" name="tipo" placeholder="Tipo de Usuario" value="{{$registro->tipo}}" class="form-control form-control-alternative"readonly required/>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <select class="custom-select" name="carrera" value="{{$registro->carrera}}" style="color: black; width:200px;" class="form-control form-control-alternative"readonly required>
-          						<option value="Sistemas">Sistemas</option>
-          						<option value="Informatica">Informatica</option>
-									</select>
-      </div>
-    </div>
-  </div>
-    <div class="row">
-    <div class="col-md-6">
-      <div class="form-group">
-        <select class="custom-select" name="materia" value="{{$registro->materia}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
-                      <li>Primero</li>
-                        <option value="Calculo">Calculo</option>
-                        <option value="Programaci'on">Programaci'on</option>
-                        <option value="Base de Datos">Base de Datos</option>
-                      <li>Segundo</li>
-                        <option value="Calculo">Calculo</option>
-                        <option value="Programaci'on">Programaci'on</option>
-                        <option value="Base de Datos">Base de Datos</option>
-                  </select>
+        <input type="text" name="carrera" placeholder="Apellido Materno" value="{{$registro->carrera}}" class="form-control form-control-alternative"readonly required/>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
         <select class="custom-select" name="actividad" value="{{$registro->actividad}}" style="color: black; width:200px;" class="form-control form-control-alternative" required>
-                      <option selected value="">Actividad:</option>
                       <option value="Clase">Clase</option>
                       <option value="Consulta">Consulta</option>
                       <option value="Practica">Practica</option>
@@ -88,6 +69,24 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
+        @include('registros.select_dinamico')
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <select class="custom-select" name="ubicacion" value="{{$registro->ubicacion}}" style="color: black; width:200px;" class="form-control form-control-alternative"readonly required>
+                      <option value="Microcontroladores">Microcontroladores</option>
+                      <option value="Lab. Linux">Lab. Linux</option>
+                      <option value="Lab. Redes">Lab. Redes</option>
+                      <option value="Lab. iMac">Lab. iMac</option>
+                      <option value="Centro de Desarrollo de Software">Centro de Desarrollo de Software</option>
+                  </select>
+      </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
           <input type="datetime" name="entrada" placeholder="Entrada" value="{{$registro->entrada}}" class="form-control form-control-alternative" required/>
       </div>
     </div>
@@ -96,8 +95,8 @@
           <input type="datetime-local" name="salida" placeholder="Salida" value="{{$registro->salida}}" class="form-control form-control-alternative" required/>
       </div>
     </div>
-  </div>
-  <div class="row">
+</div>
+<div class="row">
     <div class="col-md-6">
       <div class="form-group">
         <button type="submit" class="btn btn-icon btn-3 btn-primary">
@@ -107,10 +106,9 @@
   </div>
 </div>
 </form>
-        @include('layouts.footers.auth')
+
     </div>
 @endsection
-
 @push('js')
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>

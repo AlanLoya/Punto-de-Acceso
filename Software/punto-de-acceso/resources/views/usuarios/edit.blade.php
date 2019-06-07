@@ -14,16 +14,13 @@
   </div>
 </div>
 <br>
-<form method="POST" action="{{action("UsuariosController@update",$usuario->rfid)}}" enctype="multipart/form-data">
+<form method="POST" action="{{action("UsuariosController@update",$usuario->no_control)}}" enctype="multipart/form-data">
   @method('PUT')
   @csrf
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
       <input type="text" name="rfid" placeholder="RFID" value="{{$usuario->rfid}}" class="form-control form-control-alternative" required/>
-        <button type="submit" onclick="#" class="btn btn-icon btn-3 btn-primary">
-        <span class="btn-inner--icon"><i class="icon fa fa-credit-card"></i></span>
-        <span class="btn-inner--text">Escanear</span></button>
       </div>
     </div>
     <div class="col-md-6">
@@ -40,7 +37,12 @@
     </div>
     <div class="col-md-6">
       <div class="form-group">
-          <input type="text" name="apellido" placeholder="Apellido(s)" value="{{$usuario->apellido}}" class="form-control form-control-alternative" required/>
+          <input type="text" name="apellido" placeholder="Apellido Paterno" value="{{$usuario->apellido}}" class="form-control form-control-alternative" required/>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+          <input type="text" name="apellido1" placeholder="Apellido Materno" value="{{$usuario->apellido1}}" class="form-control form-control-alternative" required/>
       </div>
     </div>
   </div>
