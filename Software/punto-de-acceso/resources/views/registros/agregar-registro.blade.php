@@ -19,7 +19,7 @@
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-      <input type="text" name="rfid" value="{{$usuario->rfid}}" placeholder="RFID" class="form-control form-control-alternative" required/>
+      <input type="text" name="rfid" value="{{$contents}}" placeholder="RFID" class="form-control form-control-alternative" required/>
         <button type="submit" onclick="/registros/escanear" class="btn btn-icon btn-3 btn-primary">
         <span class="btn-inner--icon"><i class="icon fa fa-credit-card"></i></span>
         <span class="btn-inner--text">Escanear</span></button>
@@ -27,36 +27,36 @@
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <input type="number" name="no_control" value="{{$usuario->no_control}}" placeholder="No. Control" class="form-control form-control-alternative" readonly required/>
+        <input type="number" name="no_control" value="{{$usuario[0]->no_control}}" placeholder="No. Control" class="form-control form-control-alternative" readonly required/>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-          <input type="text" name="nombre" value="{{$usuario->nombre}}" placeholder="Nombre(s)" class="form-control form-control-alternative" readonly required/>
+          <input type="text" name="nombre" value="{{$usuario[0]->nombre}}" placeholder="Nombre(s)" class="form-control form-control-alternative" readonly required/>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-          <input type="text" name="apellido" value="{{$usuario->apellido}}" placeholder="Apellido Paterno" class="form-control form-control-alternative" readonly required/>
+          <input type="text" name="apellido" value="{{$usuario[0]->apellido}}" placeholder="Apellido Paterno" class="form-control form-control-alternative" readonly required/>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-          <input type="text" name="apellido1" value="{{$usuario->apellido1}}" placeholder="Apellido Materno" class="form-control form-control-alternative" readonly required/>
+          <input type="text" name="apellido1" value="{{$usuario[0]->apellido1}}" placeholder="Apellido Materno" class="form-control form-control-alternative" readonly required/>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <input type="text" name="tipo" value="{{$usuario->tipo}}" placeholder="Tipo de Usuario" class="form-control form-control-alternative" readonly required/>
+        <input type="text" name="tipo" value="{{$usuario[0]->tipo}}" placeholder="Tipo de Usuario" class="form-control form-control-alternative" readonly required/>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <input type="text" name="carrera" value="{{$usuario->carrera}}" placeholder="Carrera" class="form-control form-control-alternative" readonly required/>
+        <input type="text" name="carrera" value="{{$usuario[0]->carrera}}" placeholder="Carrera" class="form-control form-control-alternative" readonly required/>
       </div>
     </div>
 <div class="row">
@@ -67,7 +67,7 @@
   </div>
   <div class="col-md-6">
     <div class="form-group">
-      <select class="custom-select" name="ubicacion" style="color: black; width:300px;" class="form-control form-control-alternative" required>
+      <select class="custom-select" name="ubicacion" style="color: black; width:200px;" class="form-control form-control-alternative" required>
                     <option selected value="">Ubicacion:</option>
                     <option value="Microcontroladores">Microcontroladores</option>
                     <option value="Lab. Linux">Lab. Linux</option>

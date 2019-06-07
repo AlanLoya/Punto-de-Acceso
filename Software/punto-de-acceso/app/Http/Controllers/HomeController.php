@@ -30,6 +30,6 @@ class HomeController extends Controller
       $count1=UserITSZO::count();
       $count2 = UserITSZO::where('tipo','like', '%Docente%')->count();
       $count3 = UserITSZO::where('tipo','like', '%Alumno%')->count();
-        return view('dashboard',compact('count','count1','count2','count3','countCon','countCla','countPra','time'));
+        return view('dashboard',compact('count','count1','count2','count3','countCon','countCla','countPra'));
     }
 }
