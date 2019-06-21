@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 02-06-2019 a las 13:17:24
--- Versión del servidor: 10.1.38-MariaDB-0+deb9u1
--- Versión de PHP: 7.0.33-0+deb9u3
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 10-06-2019 a las 23:22:20
+-- Versión del servidor: 10.1.35-MariaDB
+-- Versión de PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -48,8 +50,7 @@ CREATE TABLE `accesos` (
 --
 
 INSERT INTO `accesos` (`id`, `rfid`, `no_control`, `nombre`, `apellido`, `apellido1`, `tipo`, `carrera`, `materia`, `actividad`, `ubicacion`, `entrada`, `salida`, `uso`) VALUES
-(38, '93CCCA16', 15040110, 'Alan Arturo', 'Loya', 'Favela', 'Alumno', 'Sistemas', 'Sistemas Embebidos TID-1604', 'Practica', 'Microcontroladores', '2019-06-02 17:48:02', '2019-06-02 17:55:52', '00:07:50'),
-(39, 'AB90972C', 72, 'Jose Artemio', 'Barraza', 'Alvarado', 'Docente', 'Sistemas', 'Sistemas Embebidos TID-1604', 'Clase', 'Lab. Linux', '2019-06-02 17:49:15', '2019-06-02 17:56:05', '00:04:10');
+(38, '93CCCA16', 15040110, 'Alan Arturo', 'Loya', 'Favela', 'Alumno', 'Sistemas', 'Sistemas Embebidos TID-1604', 'Practica', 'Microcontroladores', '2019-06-02 17:48:02', '2019-06-02 17:55:52', '00:07:50');
 
 -- --------------------------------------------------------
 
@@ -104,7 +105,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Alan Arturo Loya', 'arturo-ya@live.com', NULL, '$2y$10$zbGT9SQKxagOC05NfLwMbeHsxPO.u9NX/RcyZPoJP3uZX.o.b/ldS', NULL, '2019-05-09 02:49:38', '2019-05-09 02:49:38');
+(2, 'Administrador', 'adm@itszo.mx', NULL, '$2y$10$n7YC7viMlMly60d1gFxuu.2oiqDvVprodIRP9/x04wasojnlPv7MC', NULL, '2019-06-10 20:31:40', '2019-06-10 20:31:40');
 
 -- --------------------------------------------------------
 
@@ -127,7 +128,6 @@ CREATE TABLE `user_i_t_s_z_o_s` (
 --
 
 INSERT INTO `user_i_t_s_z_o_s` (`rfid`, `no_control`, `nombre`, `apellido`, `apellido1`, `tipo`, `carrera`) VALUES
-('AB90972C', 72, 'Jose Artemio', 'Barraza', 'Alvarado', 'Docente', 'Sistemas'),
 ('93CCCA16', 15040110, 'Alan Arturo', 'Loya', 'Favela', 'Alumno', 'Sistemas');
 
 --
@@ -170,16 +170,20 @@ ALTER TABLE `user_i_t_s_z_o_s`
 --
 ALTER TABLE `accesos`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
 --
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

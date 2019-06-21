@@ -1,7 +1,7 @@
 # Punto-de-Acceso ITSZO Lab. Linux
 Laravel
 Composer 1.8.5
-Php 2.1.3^
+Php 7.1.3^
 Xampp-Lampp
 Interfaz Grafica almacenada en el Directorio /Software
 Base de Datos almacenada en el Directorio /BD
