@@ -1,3 +1,6 @@
+<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+
+
 # Punto-de-Acceso ITSZO Lab. Linux
 Laravel
 Composer 1.8.5
